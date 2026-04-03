@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Middle East Air Defense</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div id="root">
+    <header>
+      <div class="brand"><strong>Middle East Air Defense</strong> <span class="small">Simulation Command</span></div>
+      <div class="metrics">
+        <span class="pill" id="waveLbl">Wave</span>
+        <span class="pill">זמן: <span id="timeLbl" class="mono">00:00</span></span>
+        <span class="pill">תחמושת: <span id="ammoLbl">0</span></span>
+        <span class="pill">מורל: <span id="moraleLbl">100%</span></span>
+        <span class="pill">לחץ: <span id="pressureLbl">0%</span></span>
+      </div>
+      <div class="controls">
+        <button id="pauseBtn">Pause</button>
+        <button id="speed1Btn" class="active">x1</button>
+        <button id="speed2Btn">x2</button>
+        <button id="speed4Btn">x4</button>
+      </div>
+    </header>
+    <main>
+      <section class="panel">
+        <h3>איומים חיים</h3>
+        <div class="body" id="threatList"></div>
+      </section>
+      <section class="panel">
+        <h3>מפת המזרח התיכון - Live Ops</h3>
+        <div class="subbar">
+          <span>OSM Live</span>
+          <span id="simModeLbl">SIM MODE: ACTIVE</span>
+        </div>
+        <div class="body map-body"><div id="map"></div></div>
+      </section>
+      <section class="panel">
+        <h3>שליטה ידנית</h3>
+        <div class="body">
+          <h4>בקרת ירוט</h4>
+          <div id="engagementList"></div>
+          <hr />
+          <div class="card">
+            <div class="row">
+              <button id="addBatteryBtn">הוסף סוללה</button>
+              <button id="addRadarBtn">הוסף מכ"ם</button>
+            </div>
+            <div class="small">גרירה חופשית של סוללות ומכ"מים על המפה.</div>
+          </div>
+          <div id="assetList"></div>
+          <hr />
+          <h4>לוג מבצעי</h4>
+          <div id="logList"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <div id="screenFx"></div>
+  <div id="actionToast"></div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
